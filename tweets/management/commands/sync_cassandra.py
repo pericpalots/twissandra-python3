@@ -16,7 +16,7 @@ class Command(NoArgsCommand):
             msg += 'be deleted! (y/n): '
             resp = raw_input(msg)
             if not resp or resp[0] != 'y':
-                print "Ok, then we're done here."
+                print ("Ok, then we're done here.")
                 return
             session.execute("DROP KEYSPACE twissandra")
 
@@ -79,4 +79,4 @@ class Command(NoArgsCommand):
             ) WITH CLUSTERING ORDER BY (time DESC)
             """)
 
-        print 'All done!'
+        print ('All done!')
