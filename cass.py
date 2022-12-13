@@ -72,12 +72,13 @@ def _get_line(table, username, start, limit):
 
     query = query.format(table=table, time_clause=time_clause)
 
-    results = session.execute(query, params)
-    if not results:
+    results0 = session.execute(query, params)
+    if not results0:
         return [], None
 
     # If we didn't get to the end, return a starting point for the next page
-    if len(results) == limit:
+    results = list(results0)
+    if len([r for r in results]) == limit:
         # Find the oldest ID
         oldest_timeuuid = min(row.time for row in results)
 
