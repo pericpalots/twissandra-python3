@@ -33,22 +33,20 @@ And then make sure Cassandra is running:
 
 ### Create a virtual Python environment with Twissandra's dependencies
 
-First, make sure to have virtualenv installed.  If it isn't installed already,
+First, make sure to have virtualenv (venv) installed.  If it isn't installed already,
 this should do the trick:
 
-    sudo easy_install -U virtualenv
+    sudo apt get install python3-venv
 
 Now let's create a new virtual environment, and begin using it:
 
-    virtualenv twiss
+    python3 -m venv twiss
     source twiss/bin/activate
 
-We should install pip, so that we can more easily install Twissandra's
+From now on we will use pip, so that we can more easily install Twissandra's
 dependencies into our new virtual environment:
 
-    easy_install -U pip
-
-Now let's install all of the dependencies:
+    sudo apt get install python3-pip
 
     pip install -U -r twissandra/requirements.txt
 
