@@ -14,7 +14,7 @@ class Command(NoArgsCommand):
             msg = ' It looks like you already have a twissandra keyspace.\nDo you '
             msg += 'want to delete it and recreate it? All current data will '
             msg += 'be deleted! (y/n): '
-            resp = raw_input(msg)
+            resp = input(msg)
             if not resp or resp[0] != 'y':
                 print ("Ok, then we're done here.")
                 return
